@@ -1690,3 +1690,19 @@ img, svg {
     width: 100%;
   }
 }
+
+/* =====================================================================
+   FIX: MENU DO TELEMÓVEL CORTAVA "FORMAÇÃO"
+   Com justify-content:center o conteúdo que sobra fica cortado à esquerda
+   e não se consegue deslizar até lá. Em vez disso, usamos margens
+   automáticas no primeiro/último link: centra quando cabe tudo e
+   desliza normalmente quando não cabe.
+   ===================================================================== */
+@media (max-width: 768px) {
+  .nav-menu {
+    justify-content: flex-start;
+  }
+
+  .nav-menu a:first-child { margin-left: auto; }
+  .nav-menu a:last-child  { margin-right: auto; }
+}
