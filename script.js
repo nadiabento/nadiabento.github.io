@@ -1,40 +1,67 @@
 (function () {
   var root = document.documentElement;
-  function get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
-  function put(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
 
-  function setLang(l) {
-    root.setAttribute('data-lang', l);
-    root.lang = l === 'en' ? 'en' : 'pt-PT';
-    document.querySelectorAll('[data-set-lang]').forEach(function (b) {
-      b.setAttribute('aria-pressed', b.getAttribute('data-set-lang') === l ? 'true' : 'false');
+  function get(key) {
+    try {
+      return localStorage.getItem(key);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function put(key, val) {
+    try {
+      localStorage.setItem(key, val);
+    } catch (e) {}
+  }
+
+  // Gestão de Idioma
+  function setLang(lang) {
+    root.setAttribute("data-lang", lang);
+    root.lang = lang === "en" ? "en" : "pt-PT";
+    document.querySelectorAll("[data-set-lang]").forEach(function (btn) {
+      var active = btn.getAttribute("data-set-lang") === lang;
+      btn.setAttribute("aria-pressed", active ? "true" : "false");
     });
-    put('cv-lang', l);
+    put("portfolio-lang", lang);
   }
 
-  function setMode(m) {
-    root.setAttribute('data-mode', m);
-    var icon = document.querySelector('.mode-icon');
-    if (icon) icon.textContent = m === 'dark' ? '☀' : '☾';
-    var pt = document.querySelector('.mode-label[data-l="pt"]');
-    var en = document.querySelector('.mode-label[data-l="en"]');
-    if (pt) pt.textContent = m === 'dark' ? 'Claro' : 'Escuro';
-    if (en) en.textContent = m === 'dark' ? 'Light' : 'Dark';
-    put('cv-mode', m);
+  // Gestão de Tema (Dark / Light)
+  function setMode(mode) {
+    root.setAttribute("data-mode", mode);
+    var icon = document.querySelector(".mode-icon");
+    var ptText = document.querySelector('.mode-text[data-l="pt"]');
+    var enText = document.querySelector('.mode-text[data-l="en"]');
+
+    if (icon) icon.textContent = mode === "dark" ? "☾" : "☀";
+    if (ptText) ptText.textContent = mode === "dark" ? "Escuro" : "Claro";
+    if (enText) enText.textContent = mode === "dark" ? "Dark" : "Light";
+
+    put("portfolio-mode", mode);
   }
 
-  document.querySelectorAll('[data-set-lang]').forEach(function (b) {
-    b.addEventListener('click', function () { setLang(b.getAttribute('data-set-lang')); });
-  });
-  document.getElementById('modeToggle').addEventListener('click', function () {
-    setMode(root.getAttribute('data-mode') === 'dark' ? 'light' : 'dark');
+  // Event Listeners Idioma
+  document.querySelectorAll("[data-set-lang]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      setLang(btn.getAttribute("data-set-lang"));
+    });
   });
 
-  var savedLang = get('cv-lang');
-  var browserPt = (navigator.language || 'pt').toLowerCase().indexOf('pt') === 0;
-  setLang(savedLang || (browserPt ? 'pt' : 'en'));
+  // Event Listener Alternador de Tema
+  var modeToggle = document.getElementById("modeToggle");
+  if (modeToggle) {
+    modeToggle.addEventListener("click", function () {
+      var currentMode = root.getAttribute("data-mode") || "dark";
+      setMode(currentMode === "dark" ? "light" : "dark");
+    });
+  }
 
-  var savedMode = get('cv-mode');
-  var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  setMode(savedMode || (prefersDark ? 'dark' : 'light'));
+  // Inicialização
+  var savedLang = get("portfolio-lang");
+  var browserIsPt =
+    (navigator.language || "pt").toLowerCase().indexOf("pt") === 0;
+  setLang(savedLang || (browserIsPt ? "pt" : "en"));
+
+  var savedMode = get("portfolio-mode");
+  setMode(savedMode || "dark");
 })();
