@@ -13,6 +13,13 @@
 </head>
 <body>
 
+  <!-- Estas 3 divs têm de existir no HTML -->
+  <div class="ambient-glow-container" aria-hidden="true">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+  </div>
+
   <!-- Navegação de topo com seletor de tema e idioma -->
   <nav class="nav-bar">
     <div class="brand">
@@ -55,17 +62,15 @@
       </div>
 
       <h1 class="hero-headline">
-        <span data-l="pt">Engenharia de software focada em segurança e fiabilidade.</span>
-        <span data-l="en">Software engineering focused on security and reliability.</span>
+        <span data-l="pt">Compromisso com a aprendizagem e crescimento na área de Cibersegurança.</span>
+        <span data-l="en">Commitment to continuous learning and growth in Cybersecurity.</span>
       </h1>
 
       <p class="hero-summary" data-l="pt">
-        Finalista do 3.º ano de Engenharia Informática Aplicada na Universidade de Aveiro (ESTGA). 
-        Certificada em CS50 Cybersecurity por Harvard e com formação em Sistemas Informáticos.
+        Finalista na ESTGA (Universidade de Aveiro). Com maturidade profissional e postura prática, procuro a oportunidade certa para transformar a motivação em competência técnica defensiva.
       </p>
       <p class="hero-summary" data-l="en">
-        Final-year Applied Computer Engineering student at the University of Aveiro (ESTGA). 
-        Holding a Harvard CS50 Cybersecurity certificate and background in IT systems.
+        Completing my BSc at ESTGA (University of Aveiro). Pairing professional maturity with a pragmatic approach, I am seeking the right opportunity to channel motivation into solid defensive security skills.
       </p>
 
       <div class="hero-actions">
@@ -74,7 +79,7 @@
           <span data-l="en">Explore Projects</span>
           <span class="arrow-icon">↓</span>
         </a>
-        <a href="mailto:nadia-bento@hotmail.com" class="btn-ghost">
+        <a href="#contacto" class="btn-ghost">
           <span data-l="pt">Enviar Email</span>
           <span data-l="en">Send Email</span>
           <span class="arrow-icon">↗</span>
@@ -92,7 +97,7 @@
     <div class="hero-visual">
       <div class="photo-container">
         <div class="photo-glow-effect"></div>
-        <!-- Insere o teu ficheiro de foto aqui -->
+        <!-- Ficheiro de foto -->
         <img src="profile.jpg" alt="Nadia Neves Bento" class="profile-image">
         
         <div class="photo-info-card">
@@ -103,136 +108,750 @@
     </div>
   </header>
 
+  
   <!-- Conteúdo em Glass Cards -->
   <main class="page-body">
 
+  <section id="sobre" class="card-section">
+    <h2>
+      <span data-l="pt">Sobre Mim</span>
+      <span data-l="en">About Me</span>
+    </h2>
+
+    <p data-l="pt" style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 12px; font-weight: 600; color: var(--heading-color);">
+      Reconheço que a Cibersegurança é um terreno vasto e exigente, e não pretendo vender competências que ainda estou a construir. O que trago para a mesa é a honestidade de quem sabe onde está e a determinação de quem quer chegar mais longe.
+    </p>
+
+    <p data-l="pt" style="font-size: 0.95rem; color: var(--item-desc); line-height: 1.6; margin-bottom: 10px;">
+      O meu percurso combina a frequência da Licenciatura em Engenharia Informática Aplicada (ESTGA · Universidade de Aveiro) com uma bagagem profissional prévia de 7 anos no mercado de trabalho. Essa experiência conferiu-me maturidade operacional, facilidade de comunicação interpessoal, disciplina de processos e resiliência perante desafios complexos.
+    </p>
+
+    <p data-l="pt" style="font-size: 0.95rem; color: var(--item-desc); line-height: 1.6;">
+      Não encaro a tecnologia pela escrita intensiva de código de raiz, área onde recorro à inteligência artificial como apoio técnico e de documentação, mas sim pelo empenho em compreender arquiteturas, boas práticas e procedimentos defensivos. O meu objetivo é integrar uma equipa onde possa dar os primeiros passos práticos, aprender com profissionais experientes e retribuir com rigor diário, espírito de iniciativa e dedicação contínua para evoluir na área.
+    </p>
+
+    <!-- Versão em Inglês -->
+    <p data-l="en" style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 12px; font-weight: 600; color: var(--heading-color);">
+      I recognize that Cybersecurity is a vast and demanding field, and I do not intend to oversell skills I am still actively building. What I bring to the table is the honesty of knowing where I stand and the drive to go further.
+    </p>
+
+    <p data-l="en" style="font-size: 0.95rem; color: var(--item-desc); line-height: 1.6; margin-bottom: 10px;">
+      My background pairs my current studies in Applied Informatics Engineering (ESTGA · University of Aveiro) with 7 years of prior professional work experience. This journey has given me operational maturity, strong communication skills, process discipline, and persistence when tackling complex problems.
+    </p>
+
+    <p data-l="en" style="font-size: 0.95rem; color: var(--item-desc); line-height: 1.6;">
+      Rather than focusing on building code from scratch — where I leverage modern AI tools for technical support and documentation —, my focus is on understanding system structures, defensive practices, and security procedures. I am eager to join a team where I can take my first hands-on steps, learn from experienced colleagues, and contribute with consistency, daily discipline, and a genuine eagerness to grow.
+    </p>
+  </section>
+
     <section id="formacao" class="card-section">
-      <h2><span data-l="pt">Formação Académica</span><span data-l="en">Education</span></h2>
+    <h2>
+      <span data-l="pt">Formação Académica</span>
+      <span data-l="en">Academic Background</span>
+    </h2>
 
-      <div class="timeline-entry">
-        <div class="entry-header">
-          <h3>
-            <span data-l="pt">Licenciatura em Engenharia Informática Aplicada</span>
-            <span data-l="en">BSc in Applied Computer Engineering</span>
-          </h3>
-          <span class="period">set. 2024 – jul. 2027</span>
-        </div>
-        <div class="institution">ESTGA · Universidade de Aveiro</div>
-        <p data-l="pt">Foco em modelação de sistemas, boas práticas de engenharia de software e tratamento seguro de dados. Áreas de maior incidência:</p>
-        <p data-l="en">Focus on system modeling, software engineering practices and secure data management. Core subjects:</p>
-        <ul class="bullet-list">
-          <li data-l="pt">Segurança Informática e Tecnologias de Redes de Computadores</li>
-          <li data-l="en">Information Security and Computer Network Technologies</li>
-          <li data-l="pt">Engenharia de Software e Análise de Sistemas</li>
-          <li data-l="en">Software Engineering and Systems Analysis</li>
-          <li data-l="pt">Sistemas de Bases de Dados e Tópicos Avançados de Bases de Dados</li>
-          <li data-l="en">Database Systems and Advanced Database Topics</li>
-          <li data-l="pt">Interação Humano-Computador (UI/UX)</li>
-          <li data-l="en">Human-Computer Interaction (UI/UX)</li>
-          <li data-l="pt">Programação e Tecnologias Web / Aplicações Distribuídas</li>
-          <li data-l="en">Web Programming and Distributed Applications</li>
-        </ul>
+    <!-- Licenciatura ESTGA UA -->
+    <div class="timeline-entry">
+      <div class="entry-header">
+        <h3>
+          <span data-l="pt">Licenciatura em Engenharia Informática Aplicada</span>
+          <span data-l="en">BSc in Applied Informatics Engineering</span>
+        </h3>
+        <span class="period">set. 2024 – jul. 2027</span>
       </div>
+      <div class="institution">ESTGA · Universidade de Aveiro</div>
+      <p data-l="pt">
+        Licenciatura focada em modelação de sistemas, boas práticas de engenharia de software e tratamento seguro de dados.
+      </p>
+      <p data-l="en">
+        Degree focused on software engineering, system architecture, information security, and database management.
+      </p>
+      <ul class="bullet-list">
+        <li><span data-l="pt">Segurança Informática e Tecnologias de Redes de Computadores</span><span data-l="en">Information Security and Computer Networks</span></li>
+        <li><span data-l="pt">Engenharia de Software e Análise de Sistemas</span><span data-l="en">Software Engineering and Systems Analysis</span></li>
+        <li><span data-l="pt">Sistemas de Bases de Dados e Tópicos Avançados de Bases de Dados</span><span data-l="en">Database Systems and Advanced Database Topics</span></li>
+        <li><span data-l="pt">Aplicações Distribuídas e Infraestruturas Cloud</span><span data-l="en">Distributed Applications and Cloud Infrastructure</span></li>
+        <li><span data-l="pt">Interação Humano-Computador (UI/UX)</span><span data-l="en">Human-Computer Interaction (UI/UX)</span></li>
+        <li><span data-l="pt">Programação e Tecnologias Web</span><span data-l="en">Web Programming and Technologies</span></li>
+      </ul>
+    </div>
 
-      <div class="timeline-entry">
-        <div class="entry-header">
-          <h3>
-            <span data-l="pt">Técnico de Gestão e Programação de Sistemas Informáticos (TGPSI)</span>
-            <span data-l="en">IT Systems Management and Programming Technician</span>
-          </h3>
-          <span class="period">set. 2015 – jul. 2018</span>
-        </div>
-        <div class="institution">ETPC · Escola Técnico-Profissional de Cantanhede</div>
-        <p data-l="pt">Dupla certificação técnica e secundária em arquiteturas de sistemas, redes e desenvolvimento de software:</p>
-        <p data-l="en">Dual technical and high-school certification in system architecture, networks and programming:</p>
-        <ul class="bullet-list">
-          <li data-l="pt">Formação em Contexto de Trabalho (estágio curricular de 700 horas)</li>
-          <li data-l="en">Work-based training (700-hour curricular internship)</li>
-          <li data-l="pt">Redes de Comunicação e Sistemas Operativos</li>
-          <li data-l="en">Communication Networks and Operating Systems</li>
-          <li data-l="pt">Programação e Sistemas de Informação</li>
-          <li data-l="en">Programming and Information Systems</li>
-        </ul>
+    <!-- Ensino Técnico ETPC -->
+    <div class="timeline-entry">
+      <div class="entry-header">
+        <h3>
+          <span data-l="pt">Técnico de Gestão e Programação de Sistemas Informáticos (TGPSI)</span>
+          <span data-l="en">IT Systems Management and Programming Technician</span>
+        </h3>
+        <span class="period">set. 2015 – jul. 2018</span>
       </div>
+      <div class="institution">ETPC · Escola Técnico-Profissional de Cantanhede</div>
+      <p data-l="pt">
+        Dupla certificação técnica e secundária em arquiteturas de sistemas, redes e desenvolvimento de software (Nível 4, média: 16 valores).
+      </p>
+      <p data-l="en">
+        Dual qualification (Level 4) with a focus on computer networks and software systems.
+      </p>
+      <ul class="bullet-list">
+        <li><span data-l="pt">Formação em Contexto de Trabalho (Estágio curricular de 700 horas)</span><span data-l="en">Workplace Internship (700 hours)</span></li>
+        <li><span data-l="pt">Redes de Comunicação e Sistemas Operativos</span><span data-l="en">Communication Networks and Operating Systems</span></li>
+        <li><span data-l="pt">Programação e Sistemas de Informação</span><span data-l="en">Programming and Information Systems</span></li>
+      </ul>
+    </div>
     </section>
 
-    <section id="experiencia" class="card-section">
-      <h2><span data-l="pt">Experiência Profissional</span><span data-l="en">Experience</span></h2>
-      <div class="timeline-entry">
-        <div class="entry-header">
-          <h3>
-            <span data-l="pt">Estagiária de TI</span>
-            <span data-l="en">IT Intern</span>
-          </h3>
-          <span class="period">jan. 2018 – jul. 2018</span>
-        </div>
-        <div class="institution">AURATUS · Estágio · Vagos</div>
-        <p data-l="pt">Integração em equipa de trabalho, aplicação direta de competências de suporte técnico e desenvolvimento:</p>
-        <p data-l="en">Team integration applying practical technical support and software development skills:</p>
-        <ul class="bullet-list">
-          <li data-l="pt">Prova de Aptidão Profissional (PAP): planeamento, desenho de interfaces e implementação integral de website para a empresa.</li>
-          <li data-l="en">Professional Aptitude Project: complete planning, UI design and full website development for the company.</li>
-        </ul>
+  <section id="experiencia" class="card-section">
+    <h2>
+      <span data-l="pt">Experiência Profissional</span>
+      <span data-l="en">Professional Experience</span>
+    </h2>
+
+    <!-- Experiência no Setor Escolar / Operacional -->
+    <div class="timeline-entry">
+      <div class="entry-header">
+        <h3>
+          <span data-l="pt">Apoio Operacional & Coordenação de Infraestruturas Escolares</span>
+          <span data-l="en">Operational Support & School Operations Coordination</span>
+        </h3>
+        <span class="period">
+          <span data-l="pt">até jul. 2024</span>
+          <span data-l="en">until Jul. 2024</span>
+        </span>
       </div>
-    </section>
+      <div class="institution">
+        <span data-l="pt">Comunidade Escolar & Apoio Institucional</span>
+        <span data-l="en">Educational Community & Operations</span>
+      </div>
+      <p data-l="pt">
+        Gestão e suporte às operações diárias no espaço escolar, garantindo a conformidade dos processos diários, segurança física e operacional dos espaços e suporte direto à coordenação:
+      </p>
+      <p data-l="en">
+        Support and management of day-to-day school operations, ensuring procedural compliance, operational safety, and continuous assistance to faculty leadership:
+      </p>
+      <ul class="bullet-list">
+        <li>
+          <span data-l="pt"><strong>Gestão de Incidentes & Resolução Prática:</strong> Intervenção imediata e resolução proativa de ocorrências operacionais e logísticas diárias.</span>
+          <span data-l="en"><strong>Incident Management & Action:</strong> Prompt response and practical mitigation of daily logistical and operational occurrences.</span>
+        </li>
+        <li>
+          <span data-l="pt"><strong>Mediação Interpessoal & Comunicação:</strong> Articulação diária entre docentes, encarregados de educação e alunos, assegurando um ambiente colaborativo e seguro.</span>
+          <span data-l="en"><strong>Interpersonal Facilitation:</strong> Effective liaison between staff, students, and administration, fostering an orderly and secure environment.</span>
+        </li>
+        <li>
+          <span data-l="pt"><strong>Organização de Recursos:</strong> Monitorização do bom estado e conformidade dos espaços comuns e equipamentos de apoio.</span>
+          <span data-l="en"><strong>Resource Coordination:</strong> Overseeing maintenance, security standards, and daily availability of common facilities.</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Estágio AURATUS -->
+    <div class="timeline-entry">
+      <div class="entry-header">
+        <h3>
+          <span data-l="pt">Estagiária de TI</span>
+          <span data-l="en">IT Intern</span>
+        </h3>
+        <span class="period">jan. 2018 – jul. 2018</span>
+      </div>
+      <div class="institution">AURATUS · Estágio Curricular (Vagos)</div>
+      <p data-l="pt">
+        Integração em equipa técnica, suporte a sistemas informáticos e desenvolvimento de soluções à medida da organização:
+      </p>
+      <p data-l="en">
+        Technical internship in a corporate setting, providing IT systems support and developing web-based solutions:
+      </p>
+      <ul class="bullet-list">
+        <li>
+          <span data-l="pt"><strong>Prova de Aptidão Profissional (PAP):</strong> Desenvolvimento integral de um website institucional para a empresa, desde o levantamento de requisitos e desenho relacional de dados até à implementação e testes da interface web.</span>
+          <span data-l="en"><strong>Final Capstone Project:</strong> End-to-end development of an institutional website, spanning requirements elicitation, database schema modeling, and front-end interface deployment.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
 
     <section id="certificados" class="card-section">
-      <h2><span data-l="pt">Certificações</span><span data-l="en">Certifications</span></h2>
-      <div class="timeline-entry">
-        <div class="entry-header">
-          <h3>CS50's Introduction to Cybersecurity</h3>
-          <span class="period">set. 2026</span>
-        </div>
-        <div class="institution">Harvard University</div>
-        <p data-l="pt">Formação intensiva em análise de vetores de ataque, segurança defensiva, vulnerabilidades OWASP, criptografia aplicada, integridade de redes e políticas de privacidade.</p>
-        <p data-l="en">Comprehensive training covering attack vectors, defensive security, OWASP vulnerabilities, applied cryptography, network integrity, and privacy principles.</p>
-        <div class="credential-box">
-          <span>Credential ID:</span> 5792d2a0-4702-4edf-92fd-deed6efcb3d3
-        </div>
+    <h2>
+      <span data-l="pt">Certificações & Formação Profissional</span>
+      <span data-l="en">Certifications & Training</span>
+    </h2>
+
+    <!-- 1. Harvard CS50 Cybersecurity -->
+    <div class="timeline-entry">
+      <div class="entry-header">
+        <h3>CS50's Introduction to Cybersecurity</h3>
+        <span class="period">set. 2026</span>
       </div>
+      <div class="institution">Harvard University</div>
+      <p data-l="pt">
+        Certificação focada em princípios defensivos de segurança informática: criptografia prática, mitigação de ameaças aplicacionais, autenticação robusta e análise de vulnerabilidades.
+      </p>
+      <p data-l="en">
+        Certification focused on defensive information security principles: practical cryptography, application vulnerability mitigation, secure authentication, and threat analysis.
+      </p>
+    </div>
+
+    <!-- 2. Microcredenciais de Blockchain da UA -->
+    <div class="timeline-entry">
+      <div class="entry-header">
+        <h3>
+          <span data-l="pt">Microcredenciais em Blockchain (19/20 valores)</span>
+          <span data-l="en">Blockchain Micro-credentials (Grade: 19/20)</span>
+        </h3>
+        <span class="period">jun. 2026</span>
+      </div>
+      <div class="institution">Universidade de Aveiro</div>
+      <p data-l="pt">
+        Formações universitárias especializadas de nível superior com avaliação formal, concluídas com classificação de excelência (19 valores):
+      </p>
+      <p data-l="en">
+        Specialized university credentials completed with top academic distinction (grade: 19/20):
+      </p>
+      <ul class="bullet-list">
+        <li>
+          <span data-l="pt"><strong>6297 | Fundamentos de Blockchain:</strong> Arquiteturas descentralizadas, mecanismos de consenso, segurança criptográfica e integridade de blocos.</span>
+          <span data-l="en"><strong>6297 | Blockchain Fundamentals:</strong> Decentralized architectures, consensus mechanisms, cryptographic security, and ledger integrity.</span>
+        </li>
+        <li>
+          <span data-l="pt"><strong>6294 | Plataformas de Blockchain:</strong> Desenvolvimento, contratos inteligentes e integração de redes descentralizadas.</span>
+          <span data-l="en"><strong>6294 | Blockchain Platforms:</strong> Smart contracts implementation, development workflows, and distributed platform integration.</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 3. Coaching e Comunicação (UFCD 8622) -->
+    <div class="timeline-entry">
+      <div class="entry-header">
+        <h3>
+          <span data-l="pt">Coaching e Comunicação (UFCD 8622)</span>
+          <span data-l="en">Coaching and Communication</span>
+        </h3>
+        <span class="period">dez. 2022</span>
+      </div>
+      <div class="institution">
+        <span data-l="pt">Formação Certificada · 25 horas com Diploma</span>
+        <span data-l="en">Certified Training · 25 hours with Diploma</span>
+      </div>
+      <p data-l="pt">
+        Formação contínua de competências transversais focada em escuta ativa, resolução colaborativa de problemas, técnicas de feedback estruturado e facilitação da comunicação em equipa.
+      </p>
+      <p data-l="en">
+        Professional soft skills training focused on active listening, collaborative problem solving, structured feedback, and effective team communication.
+      </p>
+    </div>
+    
     </section>
 
     <section id="competencias" class="card-section">
-      <h2><span data-l="pt">Competências Técnicas</span><span data-l="en">Skills</span></h2>
-      <div class="skills-grid">
-        <span class="skill-tag">Cibersegurança</span>
-        <span class="skill-tag">Segurança de Redes</span>
-        <span class="skill-tag">Sistemas Operativos</span>
-        <span class="skill-tag">Engenharia de Software</span>
-        <span class="skill-tag">Análise de Sistemas</span>
-        <span class="skill-tag">Desenvolvimento Web</span>
-        <span class="skill-tag">Bases de Dados</span>
-        <span class="skill-tag">UI / UX</span>
-        <span class="skill-tag">Cloud Computing</span>
-        <span class="skill-tag">Git / Controlo de Versões</span>
-      </div>
-    </section>
+    <h2>
+      <span data-l="pt">Competências & Tecnologias</span>
+      <span data-l="en">Skills & Technologies</span>
+    </h2>
 
-    <section id="projetos" class="card-section">
-      <h2><span data-l="pt">Projetos em Destaque</span><span data-l="en">Projects</span></h2>
-      <div class="projects-layout">
-        <div class="project-box">
-          <h3><span data-l="pt">Saúde Digital</span><span data-l="en">Project 1</span></h3>
-          <p data-l="pt">O SaúdeDigital é uma plataforma web completa que centraliza e organiza exames médicos, 
-            permitindo aos pacientes gerenciar seu histórico clínico e compartilhar relatórios em PDF com profissionais de saúde por meio de links temporários e seguros.</p>
-          <p data-l="en">SaúdeDigital is a comprehensive web platform that centralizes and organizes medical tests, allowing patients to manage their medical history and share PDF reports with healthcare professionals via temporary, secure links.</p>
-          <a href="https://github.com/nadiabento/SaudeDigital" target="_blank" rel="noopener">Repositório GitHub ↗</a>
-        </div>
-        <div class="project-box">
-          <h3><span data-l="pt">Projeto 2</span><span data-l="en">Project 2</span></h3>
-          <p data-l="pt">Descrição concisa da aplicação, objetivos alcançados e tecnologias aplicadas.</p>
-          <p data-l="en">Short summary of the application, goals achieved and tech stack.</p>
-          <a href="https://github.com/nadiabento" target="_blank" rel="noopener">Repositório GitHub ↗</a>
-        </div>
-        <div class="project-box">
-          <h3><span data-l="pt">Projeto 3</span><span data-l="en">Project 3</span></h3>
-          <p data-l="pt">Descrição concisa da aplicação, objetivos alcançados e tecnologias aplicadas.</p>
-          <p data-l="en">Short summary of the application, goals achieved and tech stack.</p>
-          <a href="https://github.com/nadiabento" target="_blank" rel="noopener">Repositório GitHub ↗</a>
-        </div>
-      </div>
-    </section>
+    <div class="skills-grid">
+      <span class="skill-tag">Segurança Informática</span>
+      <span class="skill-tag">Criptografia Aplicada</span>
+      <span class="skill-tag">Análise de Sistemas</span>
+      <span class="skill-tag">Bases de Dados (SQL & NoSQL)</span>
+      <span class="skill-tag">Alta Disponibilidade (HA)</span>
+      <span class="skill-tag">Docker & Contentorização</span>
+      <span class="skill-tag">Java</span>
+      <span class="skill-tag">Node.js</span>
+      <span class="skill-tag">Arquitetura de Redes</span>
+      <span class="skill-tag">UI / UX</span>
+      <span class="skill-tag">Comunicação Técnica & Liderança</span>
+    </div>
+  </section>
 
+<section id="projetos" class="projects-section">
+  <div class="projects-container">
+    
+    <!-- Coluna Esquerda Fixa -->
+    <div class="projects-sidebar">
+      <span class="section-tag"><span data-l="pt">Portfólio Técnico</span><span data-l="en">Technical Portfolio</span></span>
+      <h2 class="section-huge-title"><span data-l="pt">Sistemas & Código.</span><span data-l="en">Systems & Code.</span></h2>
+      
+      <ul class="projects-nav-list">
+        <li class="active"><a href="#proj-safedispatch"><span>SafeDispatch</span> <span class="year">2026</span></a></li>
+        <li><a href="#proj-hagateway"><span>HA Gateway & Portal</span> <span class="year">2026</span></a></li>
+        <li><a href="#proj-saudedigital"><span>SaúdeDigital</span> <span class="year">2026</span></a></li>
+        <li><a href="#proj-portfolio"><span>Este Portfólio / CV</span> <span class="year">2026</span></a></li>
+      </ul>
+    </div>
+
+    <!-- Coluna Direita com os Cartões de Projeto -->
+    <div class="projects-cards-stream">
+      
+      <!-- 1. SafeDispatch -->
+      <article id="proj-safedispatch" class="project-detail-card animate-on-scroll">
+        <div class="card-visual-preview">
+          <div class="mockup-header">
+            <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+            <span class="mockup-url">safedispatch.internal/crypto-stream</span>
+          </div>
+          <div class="mockup-canvas">
+            <svg class="tech-anim-svg" viewBox="0 0 500 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern id="grid-crypto" width="25" height="25" patternUnits="userSpaceOnUse">
+                  <path d="M 25 0 L 0 0 0 25" fill="none" stroke="currentColor" stroke-opacity="0.06"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#grid-crypto)"/>
+              <g transform="translate(60, 120)">
+                <circle r="22" class="svg-node-base"/>
+                <circle r="14" class="svg-node-inner pulse-slow"/>
+                <text y="38" text-anchor="middle" class="svg-caption">X25519 Alice</text>
+              </g>
+              <path class="svg-cable-base" d="M 85 120 L 210 120"/>
+              <path class="svg-cable-flow" d="M 85 120 L 210 120"/>
+              <g transform="translate(250, 120)">
+                <rect x="-35" y="-35" width="70" height="70" rx="14" class="svg-shield-box"/>
+                <path class="svg-lock-shackle" d="M -8 -8 V -15 A 8 8 0 0 1 8 -15 V -8"/>
+                <rect x="-12" y="-8" width="24" height="20" rx="4" class="svg-lock-body"/>
+                <circle cx="0" cy="2" r="2.5" fill="var(--bg-base)"/>
+                <text y="48" text-anchor="middle" class="svg-caption">AES-GCM 256</text>
+              </g>
+              <path class="svg-cable-base" d="M 290 120 L 415 120"/>
+              <path class="svg-cable-cipher" d="M 290 120 L 415 120"/>
+              <g transform="translate(440, 120)">
+                <circle r="22" class="svg-node-base"/>
+                <circle r="14" class="svg-node-inner pulse-slow" style="animation-delay: 1.2s;"/>
+                <text y="38" text-anchor="middle" class="svg-caption">Bob</text>
+              </g>
+              <circle class="svg-packet-stream" r="4.5">
+                <animateMotion path="M 85 120 L 415 120" dur="2.8s" repeatCount="indefinite"/>
+              </circle>
+            </svg>
+          </div>
+        </div>
+
+        <div class="card-content">
+          <div class="card-title-row">
+            <h3>SafeDispatch / LogiSec Messenger</h3>
+            <div class="badge-group">
+              <span class="project-badge project-badge-team"><span data-l="pt">Projeto de Grupo</span><span data-l="en">Group Project</span></span>
+              <span class="project-badge"><span data-l="pt">Criptografia & Redes</span><span data-l="en">Crypto & Networks</span></span>
+            </div>
+          </div>
+          
+          <p class="project-desc" data-l="pt">
+            Plataforma de mensagens com encriptação ponto a ponto (E2E), aperto de mão (handshake) seguro via X25519, cifra simétrica AES-GCM, derivação com HKDF e servidores de retransmissão TCP dedicados.
+          </p>
+          <p class="project-desc" data-l="en">
+            Secure messaging platform featuring end-to-end encryption (E2E), X25519 handshake, AES-GCM symmetric cipher, and client-server TCP sockets with attack validation.
+          </p>
+
+          <div class="tech-stack-pills">
+            <span>Java</span>
+            <span>X25519 / Ed25519</span>
+            <span>AES-GCM</span>
+            <span>Sockets TCP</span>
+            <span>Segurança Aplicacional</span>
+          </div>
+
+          <div class="card-links">
+            <a href="https://github.com/nadiabento" target="_blank" rel="noopener" class="link-action">GitHub ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. HA Gateway & Portal -->
+      <article id="proj-hagateway" class="project-detail-card animate-on-scroll">
+        <div class="card-visual-preview">
+          <div class="mockup-header">
+            <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+            <span class="mockup-url">ha-gateway.cluster/keepalived-vrrp</span>
+          </div>
+          <div class="mockup-canvas">
+            <svg class="tech-anim-svg" viewBox="0 0 500 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern id="grid-ha" width="25" height="25" patternUnits="userSpaceOnUse">
+                  <path d="M 25 0 L 0 0 0 25" fill="none" stroke="currentColor" stroke-opacity="0.06"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#grid-ha)"/>
+              
+              <g transform="translate(60, 120)">
+                <rect x="-30" y="-24" width="60" height="48" rx="8" class="svg-shield-box"/>
+                <text text-anchor="middle" y="5" class="svg-mono-label">VIP</text>
+                <text y="38" text-anchor="middle" class="svg-caption">Load Balancer</text>
+              </g>
+              
+              <path class="svg-route-active" d="M 95 110 Q 180 65 220 65"/>
+              <path class="svg-route-backup" d="M 95 130 Q 180 175 220 175"/>
+
+              <!-- NODE-01 Com caixa ampla e texto centrado -->
+              <g transform="translate(285, 65)">
+                <rect x="-65" y="-24" width="130" height="48" rx="8" class="svg-node-active-box"/>
+                <circle cx="-45" cy="0" r="4.5" fill="#22c55e" class="pulse-fast"/>
+                <text x="5" y="4" text-anchor="middle" class="svg-mono-label">NODE-01</text>
+                <text x="0" y="38" text-anchor="middle" class="svg-caption">MASTER (VRRP)</text>
+              </g>
+
+              <!-- NODE-02 Com caixa ampla e texto centrado -->
+              <g transform="translate(285, 175)">
+                <rect x="-65" y="-24" width="130" height="48" rx="8" class="svg-shield-box"/>
+                <circle cx="-45" cy="0" r="4.5" fill="var(--text-muted)"/>
+                <text x="5" y="4" text-anchor="middle" class="svg-mono-label">NODE-02</text>
+                <text x="0" y="38" text-anchor="middle" class="svg-caption">STANDBY</text>
+              </g>
+
+              <path class="svg-cable-base" d="M 350 65 Q 400 65 430 110"/>
+              <path class="svg-cable-base" d="M 350 175 Q 400 175 430 130"/>
+              
+              <g transform="translate(450, 120)">
+                <circle r="22" class="svg-node-base"/>
+                <path d="M -8 -8 H 8 M -8 0 H 8 M -8 8 H 8" stroke="var(--accent-gold)" stroke-width="2.2" stroke-linecap="round"/>
+                <text y="38" text-anchor="middle" class="svg-caption">DB Cluster</text>
+              </g>
+              <circle class="svg-packet-stream" r="4">
+                <animateMotion path="M 95 110 Q 180 65 220 65 L 350 65 Q 400 65 430 110" dur="2.2s" repeatCount="indefinite"/>
+              </circle>
+            </svg>
+          </div>
+        </div>
+
+        <div class="card-content">
+          <div class="card-title-row">
+            <h3>HA Gateway & Portal Redundante</h3>
+            <div class="badge-group">
+              <span class="project-badge project-badge-team"><span data-l="pt">Projeto de Grupo</span><span data-l="en">Group Project</span></span>
+              <span class="project-badge"><span data-l="pt">Infraestruturas & Alta Disponibilidade</span><span data-l="en">Infrastructure & HA</span></span>
+            </div>
+          </div>
+          
+          <p class="project-desc" data-l="pt">
+            Ambiente de infraestrutura com tolerância a falhas em máquinas virtuais via Vagrant, failover por Keepalived (VRRP), balanceamento de carga com HAProxy, contentorização Docker e persistência de dados em MariaDB e Redis.
+          </p>
+          <p class="project-desc" data-l="en">
+            High-availability cluster orchestration across VMs using Vagrant, Keepalived VRRP failover, HAProxy load balancing, Docker containers, and replicated MariaDB/Redis storage.
+          </p>
+
+          <div class="tech-stack-pills">
+            <span>Keepalived (VRRP)</span>
+            <span>HAProxy</span>
+            <span>Docker</span>
+            <span>NGINX</span>
+            <span>MariaDB / Redis</span>
+            <span>Vagrant</span>
+          </div>
+
+          <div class="card-links">
+            <a href="https://github.com/nadiabento" target="_blank" rel="noopener" class="link-action">GitHub ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. SaúdeDigital -->
+      <article id="proj-saudedigital" class="project-detail-card animate-on-scroll">
+        <div class="card-visual-preview">
+          <div class="mockup-header">
+            <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+            <span class="mockup-url">saudedigital.aivencloud.io/clinical-records</span>
+          </div>
+          <div class="mockup-canvas">
+            <svg class="tech-anim-svg" viewBox="0 0 500 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern id="grid-health" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" stroke-opacity="0.05"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#grid-health)"/>
+              <g transform="translate(35, 30)">
+                <rect width="250" height="120" rx="10" class="svg-ecg-window"/>
+                <path class="svg-ecg-line" d="M 10 60 L 60 60 L 75 40 L 90 90 L 105 20 L 120 75 L 135 60 L 180 60 L 195 40 L 210 85 L 225 25 L 240 60"/>
+                <text x="18" y="30" class="svg-caption">Live Vital Telemetry</text>
+                <text x="235" y="30" text-anchor="end" class="svg-mono-stat">78 BPM</text>
+              </g>
+              <g transform="translate(35, 165)">
+                <rect width="250" height="50" rx="8" class="svg-shield-box"/>
+                <circle cx="28" cy="25" r="12" class="svg-node-base"/>
+                <path d="M 28 17 V 33 M 20 25 H 36" stroke="var(--accent-gold)" stroke-width="2.4" stroke-linecap="round"/>
+                <text x="52" y="22" class="svg-caption">Registo Clínico Protegido</text>
+                <text x="52" y="38" class="svg-mono-label" style="font-size: 0.72rem;">ID #792-BENTO</text>
+              </g>
+              <path class="svg-route-active" d="M 290 90 Q 340 90 370 120"/>
+              <path class="svg-route-active" d="M 290 190 Q 340 190 370 130"/>
+              <g transform="translate(420, 125)">
+                <rect x="-45" y="-35" width="90" height="70" rx="14" class="svg-shield-box"/>
+                <path class="svg-cloud-icon" d="M -16 6 A 10 10 0 0 1 -4 -4 A 14 14 0 0 1 18 -2 A 10 10 0 0 1 20 12 H -16 A 8 8 0 0 1 -16 6 Z"/>
+                <text y="50" text-anchor="middle" class="svg-caption">Aiven Managed Cloud</text>
+              </g>
+              <circle class="svg-packet-stream" r="4">
+                <animateMotion path="M 290 90 Q 340 90 370 120 L 410 125" dur="1.9s" repeatCount="indefinite"/>
+              </circle>
+            </svg>
+          </div>
+        </div>
+
+        <div class="card-content">
+          <div class="card-title-row">
+            <h3>SaúdeDigital / Registo Clínico</h3>
+            <div class="badge-group">
+              <span class="project-badge project-badge-team"><span data-l="pt">Projeto de Grupo</span><span data-l="en">Group Project</span></span>
+              <span class="project-badge"><span data-l="pt">Plataforma Web & Cloud</span><span data-l="en">Web Platform & Cloud</span></span>
+            </div>
+          </div>
+          
+          <p class="project-desc" data-l="pt">
+            Plataforma web para gestão e centralização do registo clínico do paciente, integrando autenticação com controlo de permissões, base de dados relacional gerida na nuvem (Aiven Cloud) e armazenamento multimédia.
+          </p>
+          <p class="project-desc" data-l="en">
+            Web application for personal healthcare records management, featuring role-based access, managed MySQL on Aiven Cloud, and an intuitive healthcare-focused user experience.
+          </p>
+
+          <div class="tech-stack-pills">
+            <span>Node.js</span>
+            <span>Express</span>
+            <span>MySQL / Sequelize</span>
+            <span>Cloudinary</span>
+            <span>UI / UX</span>
+          </div>
+
+          <div class="card-links">
+            <a href="https://github.com/nadiabento" target="_blank" rel="noopener" class="link-action">GitHub ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. Este Portfólio / CV Interativo -->
+      <article id="proj-portfolio" class="project-detail-card animate-on-scroll">
+        <div class="card-visual-preview">
+          <div class="mockup-header">
+            <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+            <span class="mockup-url">nadiabento.github.io/portfolio</span>
+          </div>
+          <div class="mockup-canvas">
+            <svg class="tech-anim-svg cv-sheet-svg" viewBox="0 0 500 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern id="grid-cv-sheet" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" stroke-opacity="0.04"/>
+                </pattern>
+                <linearGradient id="scan-beam" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="var(--accent-gold)" stop-opacity="0"/>
+                  <stop offset="50%" stop-color="var(--accent-gold)" stop-opacity="0.25"/>
+                  <stop offset="100%" stop-color="var(--accent-gold)" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#grid-cv-sheet)"/>
+
+              <!-- Folha de CV Estilizada -->
+              <g transform="translate(100, 15)">
+                <rect width="300" height="210" rx="10" class="svg-cv-paper"/>
+
+                <!-- Barra de Scanner -->
+                <rect x="0" y="0" width="300" height="30" fill="url(#scan-beam)" class="svg-scanner-beam"/>
+
+                <!-- Cabeçalho do CV: Foto / Avatar e Dados Pessoais -->
+                <g transform="translate(20, 18)">
+                  <circle cx="20" cy="20" r="18" class="svg-cv-avatar-ring"/>
+                  <circle cx="20" cy="16" r="6" fill="var(--accent-gold)"/>
+                  <path d="M 9 29 Q 20 23 31 29" stroke="var(--accent-gold)" stroke-width="2.5" stroke-linecap="round"/>
+
+                  <rect x="50" y="6" width="110" height="9" rx="4.5" fill="var(--heading-color)" opacity="0.9"/>
+                  <rect x="50" y="20" width="150" height="6" rx="3" fill="var(--accent-gold)" opacity="0.85"/>
+                  <rect x="50" y="30" width="80" height="4" rx="2" fill="var(--text-muted)" opacity="0.5"/>
+
+                  <rect x="215" y="6" width="45" height="12" rx="6" fill="var(--accent-gold-soft)" stroke="var(--accent-gold-border)"/>
+                  <circle cx="223" cy="12" r="2.5" fill="var(--accent-gold)" class="pulse-fast"/>
+                  <rect x="229" y="10" width="24" height="4" rx="2" fill="var(--accent-gold)"/>
+                </g>
+
+                <line x1="20" y1="65" x2="280" y2="65" stroke="var(--glass-border)" stroke-width="1"/>
+
+                <!-- Timeline de Formação / Certificações -->
+                <g transform="translate(22, 78)">
+                  <line x1="6" y1="4" x2="6" y2="70" stroke="var(--accent-gold-border)" stroke-width="1.8" stroke-dasharray="3 3"/>
+
+                  <circle cx="6" cy="6" r="4" fill="var(--accent-gold)" class="pulse-slow"/>
+                  <rect x="18" y="2" width="130" height="7" rx="3.5" fill="var(--heading-color)" opacity="0.85"/>
+                  <rect x="18" y="12" width="90" height="5" rx="2.5" fill="var(--text-muted)" opacity="0.6"/>
+
+                  <circle cx="6" cy="38" r="4" fill="var(--accent-gold)" class="pulse-slow" style="animation-delay: 0.6s;"/>
+                  <rect x="18" y="34" width="115" height="7" rx="3.5" fill="var(--heading-color)" opacity="0.85"/>
+                  <rect x="18" y="44" width="75" height="5" rx="2.5" fill="var(--text-muted)" opacity="0.6"/>
+
+                  <circle cx="6" cy="70" r="4" fill="var(--accent-gold)" class="pulse-slow" style="animation-delay: 1.2s;"/>
+                  <rect x="18" y="66" width="100" height="7" rx="3.5" fill="var(--heading-color)" opacity="0.85"/>
+                  <rect x="18" y="76" width="60" height="5" rx="2.5" fill="var(--text-muted)" opacity="0.6"/>
+                </g>
+
+                <!-- Pílulas de Competências -->
+                <g transform="translate(20, 175)">
+                  <rect x="0" y="0" width="55" height="18" rx="9" class="svg-cv-skill-pill"/>
+                  <rect x="8" y="7" width="39" height="4" rx="2" fill="var(--accent-gold)"/>
+
+                  <rect x="62" y="0" width="65" height="18" rx="9" class="svg-cv-skill-pill" style="animation-delay: 0.4s;"/>
+                  <rect x="70" y="7" width="49" height="4" rx="2" fill="var(--accent-gold)"/>
+
+                  <rect x="134" y="0" width="55" height="18" rx="9" class="svg-cv-skill-pill" style="animation-delay: 0.8s;"/>
+                  <rect x="142" y="7" width="39" height="4" rx="2" fill="var(--accent-gold)"/>
+
+                  <rect x="196" y="0" width="64" height="18" rx="9" class="svg-cv-skill-pill" style="animation-delay: 1.2s;"/>
+                  <rect x="204" y="7" width="48" height="4" rx="2" fill="var(--accent-gold)"/>
+                </g>
+
+                <g transform="translate(262, 142)">
+                  <circle cx="8" cy="8" r="9" fill="var(--accent-gold-soft)" stroke="var(--accent-gold)"/>
+                  <path d="M 4 8 L 7 11 L 12 5" stroke="var(--accent-gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <div class="card-content">
+          <div class="card-title-row">
+            <h3>Portfólio & Plataforma Pessoal</h3>
+            <div class="badge-group">
+              <span class="project-badge project-badge-indiv"><span data-l="pt">Projeto Pessoal</span><span data-l="en">Personal Project</span></span>
+            </div>
+          </div>
+          
+          <p class="project-desc" data-l="pt">
+            Espaço digital desenhado para centralizar o meu percurso académico, competências e projetos práticos. Conta com alternância de temas, suporte bilingue e apresentação visual orientada à clareza.
+          </p>
+          <p class="project-desc" data-l="en">
+            Digital platform designed to centralize my academic background, skills, and engineering projects. Features theme switching, bilingual support, and a clean presentation.
+          </p>
+
+          <div class="tech-stack-pills">
+            <span>Interação & UI</span>
+            <span>Design Responsivo</span>
+            <span>Suporte Bilingue</span>
+          </div>
+
+          <div class="card-links">
+            <a href="https://github.com/nadiabento/nadiabento.github.io" target="_blank" rel="noopener" class="link-action">GitHub ↗</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="contacto" class="contact-section">
+  <div class="contact-header-strip">
+    <h2 class="contact-giant-title">
+      <span data-l="pt">Vamos conversar?</span>
+      <span data-l="en">Get in touch</span>
+    </h2>
+  </div>
+
+  <div class="contact-grid">
+    <!-- Coluna Esquerda: Texto de Enquadramento -->
+    <div class="contact-info-col">
+      <p class="contact-intro" data-l="pt">
+        Estou sempre disponível para trocar ideias, conversar sobre novos desafios ou oportunidades de estágio.
+      </p>
+      <p class="contact-intro" data-l="en">
+        I am always open to discussing new challenges, exchanging ideas, or exploring internship opportunities.
+      </p>
+
+      <p class="contact-subtext" data-l="pt">
+        Podes preencher o formulário ao lado para enviar uma mensagem diretamente para a minha caixa de correio.
+      </p>
+      <p class="contact-subtext" data-l="en">
+        Feel free to fill out the form to send a message directly to my inbox.
+      </p>
+    </div>
+
+    <!-- Coluna Direita: Cartão do Formulário -->
+    <div class="contact-form-card">
+      <div class="form-badge">✉</div>
+      <h3>
+        <span data-l="pt">Comunicação Direta</span>
+        <span data-l="en">Direct Inquiry</span>
+      </h3>
+
+      <form 
+        class="custom-form" 
+        id="contactForm" 
+        action="https://formspree.io/f/xyeeojed" 
+        method="POST"
+      >
+        <div class="form-row-2">
+          <!-- Campo: Nome -->
+          <div class="form-field">
+            <label>
+              <span data-l="pt">Nome</span>
+              <span data-l="en">First Name</span>
+            </label>
+            <input 
+              type="text" 
+              name="primeiro_nome"
+              id="senderName" 
+              placeholder="Primeiro nome" 
+              data-placeholder-pt="Primeiro nome" 
+              data-placeholder-en="First name" 
+              maxlength="60"
+              required>
+          </div>
+
+          <!-- Campo: Apelido -->
+          <div class="form-field">
+            <label>
+              <span data-l="pt">Apelido</span>
+              <span data-l="en">Last Name</span>
+            </label>
+            <input 
+              type="text" 
+              name="apelido"
+              id="senderSurname" 
+              placeholder="Apelido" 
+              data-placeholder-pt="Apelido" 
+              data-placeholder-en="Last name"
+              maxlength="60">
+          </div>
+        </div>
+
+        <!-- Campo: Email -->
+        <div class="form-field">
+          <label>Email</label>
+          <input 
+            type="email" 
+            name="email"
+            id="senderEmail" 
+            placeholder="nome@empresa.com" 
+            data-placeholder-pt="nome@empresa.com" 
+            data-placeholder-en="name@company.com" 
+            maxlength="100"
+            required>
+        </div>
+
+        <!-- Campo: Mensagem -->
+        <div class="form-field">
+          <label>
+            <span data-l="pt">Mensagem</span>
+            <span data-l="en">Message</span>
+          </label>
+          <textarea 
+            name="mensagem"
+            id="senderMsg" 
+            rows="5" 
+            placeholder="Escreva aqui a sua mensagem..." 
+            data-placeholder-pt="Escreva aqui a sua mensagem..." 
+            data-placeholder-en="Write your message here..." 
+            maxlength="2000"
+            required></textarea>
+        </div>
+
+        <!-- Botão de Envio -->
+        <button type="submit" class="btn-submit-form" id="submitBtn">
+          <span data-l="pt">Submeter Mensagem</span>
+          <span data-l="en">Send Message</span>
+        </button>
+
+        <!-- Caixa de Notificação / Feedback de Estado -->
+        <div 
+          id="formStatus" 
+          style="display: none; margin-top: 14px; font-size: 0.9rem; text-align: center; border-radius: 8px; padding: 12px; transition: all 0.2s ease;"
+        ></div>
+      </form>
+    </div>
+  </div>
+</section>
   </main>
 
   <footer class="footer-simple">
