@@ -1,0 +1,92 @@
+/* Tema claro (cinza, fundo ligeiramente mais escuro) */
+:root, html[data-mode="light"] {
+  --bg: #e9ebef;
+  --card: #ffffff;
+  --text: #272b31;
+  --muted: #6b727c;
+  --accent: #5b6572;
+  --on-accent: #ffffff;
+  --accent-soft: #eceef1;
+  --border: #d9dde3;
+}
+/* Tema escuro (cinza suave, não preto) */
+html[data-mode="dark"] {
+  --bg: #1e2125;
+  --card: #272b31;
+  --text: #e6e8eb;
+  --muted: #9ba3ae;
+  --accent: #aeb8c5;
+  --on-accent: #1e2125;
+  --accent-soft: #333840;
+  --border: #363c44;
+}
+
+/* Idioma */
+html[data-lang="pt"] [data-l="en"] { display: none; }
+html[data-lang="en"] [data-l="pt"] { display: none; }
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  transition: background .2s, color .2s;
+}
+.wrap { max-width: 860px; margin: 0 auto; padding: 28px 20px 60px; }
+
+.toolbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 28px; }
+.lang { display: inline-flex; border: 1px solid var(--border); background: var(--card); border-radius: 999px; padding: 3px; }
+.lang button {
+  border: 0; background: transparent; color: var(--muted);
+  padding: 5px 14px; border-radius: 999px; font: inherit; font-size: .85rem; font-weight: 600; cursor: pointer;
+}
+.lang button[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); }
+.mode {
+  border: 1px solid var(--border); background: var(--card); color: var(--text);
+  border-radius: 999px; padding: 6px 14px; font: inherit; font-size: .85rem; cursor: pointer;
+  transition: border-color .15s;
+}
+.mode:hover { border-color: var(--accent); }
+
+header { margin-bottom: 28px; }
+h1 { font-size: 2.2rem; margin: 0 0 4px; letter-spacing: -0.02em; }
+.subtitle { color: var(--accent); font-weight: 600; font-size: 1.1rem; margin: 0 0 12px; }
+.links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.links a {
+  text-decoration: none; color: var(--text); border: 1px solid var(--border); background: var(--card);
+  padding: 8px 14px; border-radius: 999px; font-size: .9rem; transition: border-color .15s, color .15s;
+}
+.links a:hover { border-color: var(--accent); color: var(--accent); }
+.links a.primary { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.links a.primary:hover { color: var(--on-accent); opacity: .9; }
+
+section { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 24px 26px; margin-bottom: 20px; }
+h2 { margin: 0 0 14px; font-size: 1.05rem; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); }
+.item { margin-bottom: 20px; }
+.item:last-child { margin-bottom: 0; }
+.row { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.item h3 { margin: 0; font-size: 1.05rem; }
+.where { color: var(--accent); font-size: .95rem; }
+.date, .meta { color: var(--muted); font-size: .88rem; }
+.item p { margin: 6px 0 0; font-size: .95rem; }
+.item ul { margin: 6px 0 0; padding-left: 20px; font-size: .93rem; }
+.item li { margin-bottom: 2px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.tags li { background: var(--accent-soft); color: var(--text); padding: 4px 12px; border-radius: 999px; font-size: .88rem; font-weight: 500; }
+.projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.project { border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+.project h3 { margin: 0 0 6px; font-size: 1rem; }
+.project p { margin: 0 0 10px; font-size: .92rem; color: var(--muted); }
+.project a { color: var(--accent); font-size: .9rem; text-decoration: none; font-weight: 600; }
+.project a:hover { text-decoration: underline; }
+footer { text-align: center; color: var(--muted); font-size: .85rem; margin-top: 30px; }
+
+@media print {
+  html[data-mode="dark"], html[data-mode="light"] {
+    --bg: #fff; --card: #fff; --text: #000; --muted: #444; --accent: #333; --accent-soft: #eee; --border: #ccc;
+  }
+  section { border: none; padding: 0; }
+  .links, .toolbar { display: none; }
+}
