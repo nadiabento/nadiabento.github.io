@@ -201,6 +201,7 @@ body {
   top: 0;
   z-index: 1000;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: min(1140px, 92%);
@@ -234,7 +235,6 @@ body {
   -webkit-backdrop-filter: blur(12px);
   z-index: -1;
   pointer-events: none;
-  /* Mascara a transição para não cortar de forma abrupta */
   mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
 }
@@ -1292,6 +1292,113 @@ h2 {
   }
 }
 
+@media (max-width: 768px) {
+  .nav-bar {
+    width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 !important;
+    border-radius: 0 0 16px 16px;
+    border-left: none;
+    border-right: none;
+    padding: 10px 14px 12px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px 12px;
+    box-sizing: border-box;
+  }
+
+  .nav-bar::before {
+    display: none; /* Desativa a faixa fixa em mobile para evitar bugs de scroll lateral */
+  }
+
+  .brand {
+    font-size: 0.92rem;
+    order: 1;
+  }
+
+  .nav-controls {
+    order: 2;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+  }
+
+  .theme-toggle {
+    padding: 3px 8px;
+    font-size: 0.72rem;
+  }
+
+  .mode-text {
+    display: none; /* Oculta a palavra Escuro/Dark em mobile para libertar espaço */
+  }
+
+  .lang-pill {
+    font-size: 0.76rem;
+    gap: 4px;
+  }
+
+  /* Linha horizontal deslizante para os links sem empilhar */
+  .nav-menu {
+    order: 3;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 14px;
+    padding: 6px 2px 2px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .nav-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-menu a {
+    font-size: 0.82rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Ajustes gerais de blocos para mobile */
+  .hero-section {
+    grid-template-columns: 1fr;
+    text-align: center;
+    margin-top: 25px;
+    gap: 24px;
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+
+  .photo-container {
+    max-width: 240px;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .projects-sidebar {
+    position: static;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* MEDIA QUERIES (SMARTPHONES: <= 680px) */
 @media (max-width: 680px) {
   .nav-bar {
@@ -1463,3 +1570,123 @@ h2 {
   }
 }
 
+
+/* =====================================================================
+   FIX: CENTRAR E IMPEDIR OVERFLOW HORIZONTAL EM QUALQUER ECRÃ
+   (tem de ficar SEMPRE no fim do ficheiro)
+   ===================================================================== */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  max-width: 100%;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip; /* corta o excesso sem quebrar o nav sticky */
+}
+
+/* Colunas de grelha que podem realmente encolher */
+.hero-section,
+.projects-container,
+.contact-grid,
+.form-row-2 {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 961px) {
+  .hero-section { grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); }
+  .projects-container { grid-template-columns: 320px minmax(0, 1fr); }
+  .contact-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+
+@media (min-width: 681px) {
+  .form-row-2 { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+
+/* Todos os filhos podem encolher e nunca ultrapassam o contentor */
+.hero-content,
+.hero-visual,
+.projects-sidebar,
+.projects-cards-stream,
+.project-detail-card,
+.card-section,
+.contact-info-col,
+.contact-form-card,
+.card-content,
+.card-visual-preview {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* URL do mockup: uma linha com "…" em vez de alargar o cartão */
+.mockup-header span[class^="dot-"] { flex-shrink: 0; }
+
+.mockup-url {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Texto e pílulas quebram em vez de empurrar o layout */
+.project-desc,
+.hero-summary,
+.timeline-entry p,
+.bullet-list,
+.credential-box {
+  overflow-wrap: anywhere;
+}
+
+.tech-stack-pills span,
+.project-badge {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+/* Imagens e SVG nunca maiores que o contentor */
+img, svg {
+  max-width: 100%;
+}
+
+/* Telemóvel: tudo com a mesma margem lateral, centrado */
+@media (max-width: 768px) {
+  .hero-section,
+  .page-body,
+  .projects-section,
+  .contact-section {
+    width: calc(100% - 32px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .nav-bar {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .brand { width: 100%; text-align: center; }
+  .nav-menu { justify-content: center; }
+  .nav-controls { width: 100%; justify-content: center; margin-left: 0; }
+
+  .project-detail-card { min-height: 0; }
+}
+
+/* =====================================================================
+   FIX: PROJETOS E CONTACTO COM A MESMA LARGURA DOS CARTÕES DE CIMA
+   (.projects-section e .contact-section estão dentro do .page-body,
+    por isso ocupam 100% dele em vez de outra vez 92%)
+   ===================================================================== */
+.projects-section,
+.contact-section {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .projects-section,
+  .contact-section {
+    width: 100%;
+  }
+}
