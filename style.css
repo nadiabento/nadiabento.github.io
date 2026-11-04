@@ -1295,27 +1295,74 @@ h2 {
 /* MEDIA QUERIES (SMARTPHONES: <= 680px) */
 @media (max-width: 680px) {
   .nav-bar {
-    flex-direction: column;
-    gap: 12px;
-    border-radius: 20px;
-    padding: 12px 16px;
+    width: 100%;
+    margin: 0;
+    border-radius: 0 0 16px 16px;
+    padding: 8px 14px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px 12px;
   }
 
+  /* 1. Logótipo à esquerda */
+  .brand {
+    font-size: 0.9rem;
+    order: 1;
+  }
+
+  /* 2. Controlos de tema e idioma compactos alinhados à direita */
+  .nav-controls {
+    order: 2;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+  }
+
+  .theme-toggle {
+    padding: 3px 8px;
+    font-size: 0.72rem;
+  }
+
+  .mode-text {
+    display: none; /* Deixa apenas o ícone ☾/☀ no telemóvel para poupar espaço horizontal */
+  }
+
+  .lang-pill {
+    font-size: 0.75rem;
+    gap: 4px;
+  }
+
+  /* 3. Menu de links numa linha horizontal fluida com scroll de toque */
   .nav-menu {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px 16px;
+    order: 3;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Oculta a barra cinzenta no Firefox */
+    gap: 14px;
+    padding: 4px 2px 2px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .nav-menu::-webkit-scrollbar {
+    display: none; /* Oculta a barra de scroll no Chrome/Safari */
   }
 
   .nav-menu a {
-    font-size: 0.84rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 2px 4px;
   }
 
-  .nav-controls {
-    width: 100%;
-    justify-content: center;
-    gap: 14px;
-    padding-top: 4px;
+  /* Ajustes das restantes secções para mobile */
+  .hero-section {
+    margin-top: 25px;
   }
 
   .hero-actions {
