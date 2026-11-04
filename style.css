@@ -1693,16 +1693,31 @@ img, svg {
 
 /* =====================================================================
    FIX: MENU DO TELEMÓVEL CORTAVA "FORMAÇÃO"
-   Com justify-content:center o conteúdo que sobra fica cortado à esquerda
-   e não se consegue deslizar até lá. Em vez disso, usamos margens
-   automáticas no primeiro/último link: centra quando cabe tudo e
-   desliza normalmente quando não cabe.
+   Em vez de uma linha com scroll (que cortava o início), os links
+   quebram para uma segunda linha, centrados. Ficam sempre todos visíveis.
    ===================================================================== */
 @media (max-width: 768px) {
   .nav-menu {
-    justify-content: flex-start;
+    flex-wrap: wrap !important;
+    overflow-x: visible !important;
+    justify-content: center !important;
+    gap: 4px 16px;
   }
 
-  .nav-menu a:first-child { margin-left: auto; }
-  .nav-menu a:last-child  { margin-right: auto; }
+  .nav-menu a:first-child,
+  .nav-menu a:last-child {
+    margin: 0 !important;
+  }
+}
+
+/* =====================================================================
+   LOGÓTIPO <Nadia Bento/> CLICÁVEL: volta ao topo da página
+   ===================================================================== */
+a.brand {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a.brand:hover .brand-code {
+  opacity: 0.8;
 }
