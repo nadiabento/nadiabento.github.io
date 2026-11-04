@@ -66,9 +66,7 @@ html[data-mode="light"] {
   --input-bg: rgba(244, 237, 229, 0.95);
 }
 
-/* ==========================================================
-   REGRAS BASE & RESETS
-   ========================================================== */
+/*   REGRAS BASE & RESETS */
 html[data-lang="pt"] [data-l="en"] { display: none !important; }
 html[data-lang="en"] [data-l="pt"] { display: none !important; }
 
@@ -199,18 +197,56 @@ body {
 
 /* BARRA DE NAVEGAÇÃO RESPONSIVA */
 .nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: min(1140px, 92%);
-  margin: 18px auto 0;
-  padding: 10px 20px;
+  margin: 0 auto;
+  padding: 12px 22px;
   background: var(--nav-bg);
   border: 1px solid var(--glass-border);
-  border-radius: 999px;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  transition: background 0.25s, border-color 0.25s;
+  border-top: none;
+  border-radius: 0 0 24px 24px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Faixa de proteção superior com gradiente e blur:
+   Desvanece e esconde suavemente o texto que sobe por trás da barra */
+.nav-bar::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(
+    to bottom,
+    var(--bg-base) 40%,
+    rgba(8, 9, 11, 0.8) 70%,
+    transparent 100%
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: -1;
+  pointer-events: none;
+  /* Mascara a transição para não cortar de forma abrupta */
+  mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+}
+
+/* Adaptação para o tema claro */
+html[data-mode="light"] .nav-bar::before {
+  background: linear-gradient(
+    to bottom,
+    var(--bg-base) 40%,
+    rgba(226, 215, 203, 0.8) 70%,
+    transparent 100%
+  );
 }
 
 .brand {
@@ -302,7 +338,7 @@ body {
 /* HERO SECTION FLUÍDA */
 .hero-section {
   width: min(1140px, 92%);
-  margin: clamp(35px, 6vw, 65px) auto clamp(30px, 4vw, 45px);
+  margin: clamp(60px, 8vw, 90px) auto clamp(30px, 4vw, 45px); 
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   align-items: center;
@@ -493,21 +529,35 @@ body {
 /* SECÇÕES DE CONTEÚDO (CARDS)*/
 .page-body {
   width: min(1140px, 92%);
-  margin: 20px auto 0;
+  margin: 50px auto 0;
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 36px;
 }
 
+/* Gap interno nos cartões: dá 48px de respiro no topo de cada secção */
 .card-section {
   background: var(--glass-card);
   border: 1px solid var(--glass-border);
   border-radius: 16px;
-  padding: clamp(20px, 3.5vw, 32px);
+  padding: 48px clamp(20px, 3.5vw, 36px) clamp(24px, 3.5vw, 36px); /* 48px no topo */
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
   transition: background 0.25s, border-color 0.25s;
+}
+
+/* Margem superior nos títulos das secções */
+.card-section h2,
+.projects-section h2 {
+  margin-top: 6px;
+  margin-bottom: 26px;
+}
+
+/* Distância de segurança ao clicar no menu para nunca tapar o texto */
+section[id],
+header[id] {
+  scroll-margin-top: 130px; /* Garante que o scroll pára com bastante espaço livre acima do texto */
 }
 
 h2 {
@@ -620,7 +670,7 @@ h2 {
 
 .projects-sidebar {
   position: sticky;
-  top: 90px;
+  top: 100px;
 }
 
 .section-tag {
@@ -793,45 +843,49 @@ h2 {
   stroke-width: 1.5;
 }
 
-.svg-cable-base {
-  stroke: var(--glass-border);
-  stroke-width: 2;
-  stroke-dasharray: 4 4;
-}
 
-.svg-cable-flow {
-  stroke: var(--accent-gold);
-  stroke-width: 2.2;
+.svg-cable-route-base {
+  stroke-width: 2.2px;
   stroke-dasharray: 8 6;
-  animation: cableMarch 1.2s linear infinite;
+  animation: cableMarch 0.8s linear infinite;
 }
 
-.svg-cable-cipher {
-  stroke: var(--accent-gold);
-  stroke-width: 2.5;
-  stroke-dasharray: 4 6;
-  opacity: 0.7;
-  animation: cableMarch 0.7s linear infinite reverse;
-}
 
-.svg-route-active {
-  stroke: var(--accent-gold);
-  stroke-width: 2.2;
-  stroke-dasharray: 6 5;
-  animation: cableMarch 1.4s linear infinite;
-}
-
+.svg-cable-base,
 .svg-route-backup {
   stroke: var(--glass-border);
-  stroke-width: 1.8;
-  stroke-dasharray: 3 5;
-  opacity: 0.5;
+  stroke-width: 2px;
+  stroke-dasharray: 8 6;
+  opacity: 0.45;
+}
+
+.svg-cable-flow,
+.svg-cable-cipher,
+.svg-route-active {
+  stroke: var(--accent-gold);
+  stroke-width: 2.2px;
+  stroke-dasharray: 8 6;
+  opacity: 1;
+  animation: cableMarch 0.8s linear infinite;
+}
+
+
+.svg-route-failover {
+  stroke: #ef4444;
+  stroke-width: 2.2px;
+  stroke-dasharray: 8 6;
+  opacity: 0.95;
+  animation: cableMarch 0.8s linear infinite;
+}
+
+.svg-packet-stream-red {
+  fill: #ef4444;
+  filter: drop-shadow(0 0 6px #ef4444);
 }
 
 @keyframes cableMarch {
-  to {
-    stroke-dashoffset: -20;
-  }
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -14; }
 }
 
 .svg-packet-stream {
