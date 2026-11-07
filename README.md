@@ -1,9 +1,5 @@
 # 🌐 Portfólio Pessoal & CV Técnico — Nadia Neves Bento
 
-[![Live Demo](https://img.shields.io/badge/Demo-Online-brightgreen?style=flat-square)](https://nadiabento.github.io)
-[![BSc Status](https://img.shields.io/badge/ESTGA%20·%20UA-Engenharia%20Informática%20Aplicada-orange?style=flat-square)](https://www.ua.pt)
-[![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
-
 Plataforma web minimalista e interativa desenvolvida de raiz para apresentar o meu percurso académico, competências práticas e projetos de engenharia informática orientados a cibersegurança, alta disponibilidade e sistemas distribuídos.
 
 ---
